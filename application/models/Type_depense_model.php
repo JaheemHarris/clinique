@@ -5,15 +5,15 @@
         public function __construct(){
 		}
 
-		public function insert($libelle_depense){
-			$sql = "INSERT INTO type_depense(libelle_depense, est_actif) VALUES (?, 0)";
-			$query = $this->db->query($sql,array($libelle_depense));
+		public function insert($libelle_depense, $budget_annuel_depense, $code_depense){
+			$sql = "INSERT INTO type_depense(libelle_depense, budget_annuel_depense, code_depense, est_actif) VALUES (?, ?, ?, 0)";
+			$query = $this->db->query($sql,array($libelle_depense, $budget_annuel_depense, $code_depense));
 			return $query;
 		}
 
-        public function udpate($id_type_depense, $libelle_depense){
-			$sql = "UPDATE type_depense SET libelle_depense = ? WHERE id_type_depense = ?";
-			$query = $this->db->query($sql,array($libelle_depense, $id_type_depense));
+        public function udpate($id_type_depense, $libelle_depense, $budget_annuel_depense, $code_depense){
+			$sql = "UPDATE type_depense SET libelle_depense = ?, budget_annuel_depense = ?, code_depense = ? WHERE id_type_depense = ?";
+			$query = $this->db->query($sql,array($libelle_depense, $budget_annuel_depense, $code_depense, $id_type_depense));
 			return $query;
 		}
 
@@ -27,6 +27,13 @@
         public function get_type_depense($id_type_depense){
             $sql = "SELECT * FROM type_depense WHERE id_type_depense = ? AND est_actif = 0 LIMIT 1";
 			$query = $this->db->query($sql, array($id_type_depense));
+            $result = $query->row_array();
+			return $result;
+        }
+
+		public function get_type_depense_by_code($code_depense){
+            $sql = "SELECT * FROM type_depense WHERE code_depense = ? AND est_actif = 0 LIMIT 1";
+			$query = $this->db->query($sql, array($code_depense));
             $result = $query->row_array();
 			return $result;
         }

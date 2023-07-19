@@ -26,6 +26,8 @@
                                 <tr>
                                     <th scope="col">IdTypedepense</th>
                                     <th scope="col">Libéllé</th>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Budget annuel</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
@@ -35,6 +37,8 @@
                                     <tr>
                                         <td><?= $type_depense["id_type_depense"] ?></td>
                                         <td><?= $type_depense["libelle_depense"] ?></td>
+                                        <td><?= $type_depense["code_depense"] ?></td>
+                                        <td><?= $type_depense["budget_annuel_depense"] ?></td>
                                         <td><a class="btn btn-success" href="<?=base_url('admin/type_depense/edit?id_type_depense='.$type_depense["id_type_depense"]) ?>">Modifier</a></td>
                                         <td><a class="btn btn-error" href="<?=base_url('admin/type_depense/delete?id_type_depense='.$type_depense["id_type_depense"]) ?>">Supprimer</a></td>
                                     </tr>

@@ -19,8 +19,10 @@ class Type_depense extends CI_Controller {
 
 	public function add(){
         $libelle_depense = $this->input->post('libelle_depense');
+		$budget_annuel_depense = $this->input->post('budget_annuel_depense');
+		$code_depense = strtoupper(substr($libelle_depense, 0 , 3));
 
-        $result = $this->type_depense_model->insert($libelle_depense);
+        $result = $this->type_depense_model->insert($libelle_depense, $budget_annuel_depense, $code_depense);
         if($result == FALSE){
             redirect(base_url('/admin/type_depense/new?error'));
         }

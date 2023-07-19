@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>SADCF</title>
+    <title>Clinique</title>
 
     <!-- Favicons -->
     <link href="<?php echo base_url("assets/img/favicon.png") ?>" rel="icon">
@@ -41,8 +41,7 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="<?php echo base_url("assets/img/logo.png") ?>" alt="">
-                <span class="d-none d-lg-block">SADCF</span>
+                <span class="d-none d-lg-block">Clinique</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
@@ -117,17 +116,17 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Archive</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-menu-button-wide"></i><span>Dépense</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="<?php echo base_url("/archive/new") ?>">
+                        <a href="<?php echo base_url("user/depense/new") ?>" class="active">
                             <i class="bi bi-circle"></i><span>Enregistrement</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url("/archive/search") ?>">
-                            <i class="bi bi-circle"></i><span>Recherche</span>
+                        <a href="<?php echo base_url("user/depense/csv") ?>" class="active">
+                            <i class="bi bi-circle"></i><span>Importer</span>
                         </a>
                     </li>
                 </ul>
@@ -143,7 +142,7 @@
 
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>SADCF</span></strong>. Tous droits réservés
+            &copy; Copyright <strong><span>Clinique</span></strong>. Tous droits réservés
         </div>
     </footer>
 

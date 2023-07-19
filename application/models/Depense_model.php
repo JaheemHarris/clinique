@@ -5,10 +5,21 @@
         public function __construct(){
 		}
 
-		public function insert($user){
-			$query = "INSERT INTO auth_user(role_id,firstname,lastname,email,password,is_enabled) VALUES (2,?,?,?,md5(?),1)";
-			$query_result = $this->db->query($query,array($user['prenom'],$user['nom'],$user['email'],$user['password']));
-			return $query_result;
+		public function insert($id_type_depense, $jour, $mois, $annee, $montant_depense){
+			$this->db->trans_start();
+			for($i = 0; $i < count($mois); $i++){
+				$date_depense = $annee."-".$mois[$i]."-".$jour;
+				$sql = "INSERT INTO depense(id_type_depense, montant_depense, date_depense) VALUES (?, ?, ?)";
+				$this->db->query($sql,array($id_type_depense, $montant_depense, $date_depense));
+			}
+			$status = $this->db->trans_status();
+			if ($status === FALSE) {
+				$this->db->trans_rollback(); // Rollback transaction if any operation fails
+			} else {
+				$this->db->trans_commit(); // Commit transaction if all operations succeed
+			}
+			$this->db->trans_complete();
+			return $status;
 		}
     }
 ?>

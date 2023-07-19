@@ -28,6 +28,12 @@
                                     <input type="text" class="form-control" id="libelle_acte" name="libelle_acte">
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label for="budget_annuel_acte" class="col-sm-4 col-form-label">Budget annuel du type d'acte (MGA)</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="budget_annuel_acte" name="budget_annuel_acte">
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
                                 <button type="reset" class="btn btn-secondary">Annuler</button>

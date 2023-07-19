@@ -19,8 +19,10 @@ class Type_acte extends CI_Controller {
 
 	public function add(){
         $libelle_acte = $this->input->post('libelle_acte');
+		$budget_annuel_acte = $this->input->post('budget_annuel_acte');
+		$code_acte = strtoupper(substr($libelle_acte, 0 , 3));
 
-        $result = $this->type_acte_model->insert($libelle_acte);
+        $result = $this->type_acte_model->insert($libelle_acte, $budget_annuel_acte, $code_acte);
         if($result == FALSE){
             redirect(base_url('/admin/type_acte/new?error'));
         }

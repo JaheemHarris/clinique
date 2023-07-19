@@ -5,15 +5,15 @@
         public function __construct(){
 		}
 
-		public function insert($libelle_acte){
-			$sql = "INSERT INTO type_acte(libelle_acte, est_actif) VALUES (?, 0)";
-			$query = $this->db->query($sql,array($libelle_acte));
+		public function insert($libelle_acte, $budget_annuel_acte, $code_acte){
+			$sql = "INSERT INTO type_acte(libelle_acte,budget_annuel_acte, code_acte, est_actif) VALUES (?, ?, ?, 0)";
+			$query = $this->db->query($sql,array($libelle_acte, $budget_annuel_acte, $code_acte));
 			return $query;
 		}
 
-        public function udpate($id_type_acte, $libelle_acte){
-			$sql = "UPDATE type_acte SET libelle_acte = ? WHERE id_type_acte = ?";
-			$query = $this->db->query($sql,array($libelle_acte, $id_type_acte));
+        public function udpate($id_type_acte, $libelle_acte, $budget_annuel_acte, $code_acte){
+			$sql = "UPDATE type_acte SET libelle_acte = ?, budget_annuel_acte = ?, code_acte = ? WHERE id_type_acte = ?";
+			$query = $this->db->query($sql,array($libelle_acte, $budget_annuel_acte, $code_acte, $id_type_acte));
 			return $query;
 		}
 

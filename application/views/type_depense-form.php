@@ -28,6 +28,12 @@
                                     <input type="text" class="form-control" id="libelle_depense" name="libelle_depense">
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label for="budget_annuel_depense" class="col-sm-4 col-form-label">Budget annuel du type de depense (MGA)</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="budget_annuel_depense" name="budget_annuel_depense">
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
                                 <button type="reset" class="btn btn-secondary">Annuler</button>
